@@ -33,11 +33,11 @@ app.post("/", function(req, res){
 
   var jsonData = JSON.stringify(data);
 
-  const url = "https://us11.api.mailchimp.com/3.0/lists/f903d9a08f";
+  const url = "https://us11.api.mailchimp.com/3.0/lists/{list-id}";
 
   const options = {
     method: "POST",
-    auth: "manoj:6c4b3347c826abd3dbf1372d5596fe51-us11"
+    auth: "manoj:{api-key}"
   }
   const request = https.request(url, options, function(response){
     if(response.statusCode === 200){
@@ -67,5 +67,4 @@ app.listen(process.env.PORT || 3000, function(){
 });
 
 
-// 6c4b3347c826abd3dbf1372d5596fe51-us11
-// f903d9a08f
+
